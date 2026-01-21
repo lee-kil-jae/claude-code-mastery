@@ -1,0 +1,319 @@
+/* ==================== Custom Fonts ==================== */
+body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+
+/* ==================== Smooth Scroll ==================== */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ==================== Section Fade-in Animation ==================== */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================== Custom Animations ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes progressBarFill {
+    from {
+        width: 0%;
+    }
+}
+
+/* Pulse Animation for Icons */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+
+/* ==================== Custom Scrollbar (Webkit browsers) ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+
+/* ==================== Selection Color ==================== */
+::selection {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.dark ::selection {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+
+/* ==================== Skill Progress Bar ==================== */
+.skill-progress {
+    transition: width 1.5s ease-out;
+}
+
+
+/* ==================== Link Hover Effects ==================== */
+a {
+    transition: all 0.3s ease;
+}
+
+
+/* ==================== Card Hover Effects ==================== */
+.hover\:shadow-2xl:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ==================== Focus Styles for Accessibility ==================== */
+a:focus,
+button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.dark a:focus,
+.dark button:focus {
+    outline-color: #3b82f6;
+}
+
+
+/* ==================== Print Styles ==================== */
+@media print {
+    /* 프린트 시 헤더, 네비게이션, 푸터 숨기기 */
+    header,
+    footer,
+    #scroll-to-top,
+    #theme-toggle,
+    #mobile-menu-btn {
+        display: none !important;
+    }
+
+    /* 프린트 시 배경색 제거 */
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    /* 페이지 여백 조정 */
+    section {
+        page-break-inside: avoid;
+        padding: 20px 0 !important;
+    }
+
+    /* 링크 URL 표시 */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* 그림자 제거 */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
+
+
+/* ==================== Custom Utilities ==================== */
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glass Morphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==================== Responsive Typography ==================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* ==================== Loading Animation (Optional) ==================== */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(37, 99, 235, 0.3);
+    border-radius: 50%;
+    border-top-color: #2563eb;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================== Navigation Active Link ==================== */
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.dark .nav-link.active {
+    color: #3b82f6;
+}
+
+
+/* ==================== Hero Section Animation ==================== */
+#hero {
+    animation: fadeIn 1s ease-out;
+}
+
+
+/* ==================== Button Ripple Effect ==================== */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* ==================== Mobile Menu Transition ==================== */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* ==================== Accessibility - Reduce Motion ==================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==================== Dark Mode Transition ==================== */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+/* 애니메이션과 transform은 다크모드 전환 시 transition 제외 */
+*:is([class*="animate"], [class*="transition-transform"]) {
+    transition-property: transform;
+}
